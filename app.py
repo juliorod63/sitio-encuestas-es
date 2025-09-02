@@ -96,7 +96,7 @@ st.plotly_chart(px.histogram(df, x="NPS_Alexia", color="Skil", title="Distribuci
 
 st.plotly_chart(px.histogram(df, x="NPS_Alexia", color="Antiguedad", title="Distribución por NPS Alexia y Antiguedad"))
 
-
+st.plotly_chart(px.histogram(df, x="NPS_Alexia", color="AGRUPACION", title="Distribución por NPS Alexia y Agrupación"))
 
 # Selecciona las columnas numéricas que quieres comparar
 cols = ["Satisfaccion_Alexia", "NPS_Alexia", "NPS_Servicio"]  # ajusta según tus datos
