@@ -17,6 +17,7 @@ st.set_page_config(
 )
 
 
+st.sidebar.image("flag_spain.png", width=100)
 
 st.title("Resultados Encuesta Satisfacción Clientes España")
 st.write("Bienvenido a la aplicación de Resultados Encuesta Satisfacción Clientes España.")
