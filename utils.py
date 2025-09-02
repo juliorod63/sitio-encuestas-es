@@ -42,6 +42,7 @@ def calcular_CSAT(df):
 
 def transformacion_df(df):
    df = df.rename(columns={df.columns[3]: 'Centro',df.columns[8]: 'Antiguedad', df.columns[21]: 'Modulo_Usado',df.columns[33]: 'NPS_Servicio', df.columns[56]:'Satisfaccion_Alexia', df.columns[63]:'NPS_Alexia'})
+   df["AGRUPACION"].fillna("Ninguna")
 
    return df
 

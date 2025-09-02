@@ -86,9 +86,13 @@ col3.metric(label="CSAT", value=f"{calcular_CSAT(df):.2f}", help="CSAT basado en
 st.divider()
 
 
-st.plotly_chart(px.histogram(df, x="NPS_Servicio", color="Cargo", title="Distribución de NPS x Cargo"))
+st.plotly_chart(px.histogram(df, x="NPS_Servicio", color="Cargo", title="Distribución de NPS Servicio x Cargo"))
 
-st.plotly_chart(px.histogram(df, x="NPS_Servicio", color="Skil", title="Distribución de NPS x Skill"))
+st.plotly_chart(px.histogram(df, x="NPS_Servicio", color="Skil", title="Distribución de NPS Servicio x Skill"))
+
+st.plotly_chart(px.histogram(df, x="NPS_Alexia", color="Cargo", title="Distribución de NPS Alexia x Cargo"))
+
+st.plotly_chart(px.histogram(df, x="NPS_Alexia", color="Skil", title="Distribución de NPS Alexia x Skill"))
 
 st.plotly_chart(px.histogram(df, x="Satisfaccion_Alexia", color="PROVINCIA", title="Distribución de CSAT x Provincia"))
 
