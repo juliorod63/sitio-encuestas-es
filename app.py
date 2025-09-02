@@ -109,7 +109,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("### Análisis de NPS por Variables")
 # Supón que df es tu DataFrame ya cargado y transformado
-variables = ["Cargo", "Antiguedad", "Centro", "Modulo_Usado"]  # agrega las variables que quieras analizar
+variables = ["Cargo", "Antiguedad", "Centro", "Modulo_Usado", "Skil"]  # agrega las variables que quieras analizar
 
 opcion = st.selectbox("Selecciona una variable para analizar NPS_Recomendacion:", variables)
 
