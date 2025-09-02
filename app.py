@@ -181,14 +181,20 @@ st.markdown("### Análisis NPS y CSAT por Rol"  )
 tabla_nps_rol = df.groupby("Cargo", group_keys=False).apply(calcular_NPS_Alexia).reset_index()
 tabla_nps_rol.columns = ["Cargo", "NPS_Alexia"]
 
+
+
 fig = px.bar(tabla_nps_rol, x="Cargo", y="NPS_Alexia", title="NPS Alexia por Cargo")
 st.plotly_chart(fig)
+st.dataframe(tabla_nps_rol)
+
+
 
 tabla_csat_rol = df.groupby("Cargo", group_keys=False).apply(calcular_CSAT).reset_index()
 tabla_csat_rol.columns = ["Cargo", "Satisfaccion_Alexia"]
 
 fig = px.bar(tabla_csat_rol, x="Cargo", y="Satisfaccion_Alexia", title="Satisfaccion Alexia por Cargo")
 st.plotly_chart(fig)
+st.dataframe(tabla_csat_rol)
 
 # Agrupar y calcular promedio CSAT
 df_burbujas = df.groupby(['Cargo', 'Antiguedad'], as_index=False)['Satisfaccion_Alexia'].mean()
