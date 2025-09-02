@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-from utils import load_data, transformacion_df, calcular_NPS_Alexia, calcular_NPS_Servicio, calcular_CSAT,  calcular_CSAT_Capacitacion, transformar_cargos
+from utils import load_data, transformacion_df, calcular_NPS_Alexia, calcular_NPS_Servicio, calcular_CSAT,  calcular_CSAT_Servicio, transformar_cargos
 
 #nlp = spacy.load("es_core_news_sm")
 
@@ -77,11 +77,11 @@ with st.expander("¿Cómo calculamos el NPS y el CSAT?"):
     csat = (df["CS_Alexia"].isin([4, 5]).sum() / df["CS_Alexia"].count()) * 100
     """)
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="NPS Alexia", value=f"{calcular_NPS_Alexia(df):.2f}", help="NPS basado en la pregunta de recomendar Alexia")
 col2.metric(label="NPS Servicio", value=f"{calcular_NPS_Servicio(df):.2f}", help="NPS basado en la pregunta de recomendar el Servicio")
-col3.metric(label="CSAT", value=f"{calcular_CSAT(df):.2f}", help="CSAT basado en la satisfacción con Alexia")
-
+col3.metric(label="CSAT Producto", value=f"{calcular_CSAT(df):.2f}", help="CSAT basado en la satisfacción con Alexia")
+col4.metric(label="CSAT Servicio", value=f"{calcular_CSAT_Servicio(df):.2f}", help="CSAT basado en la satisfacción con el Servicio")
 
 st.divider()
 
